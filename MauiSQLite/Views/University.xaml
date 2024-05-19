@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiSQLite.University"
+             Title="University">
+
+    <StackLayout>
+
+        <Label Text="Type The University Name" FontAttributes="Bold" TextColor="#333333" HorizontalOptions="Center" Margin="0,20,0,10"/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="10">
+            <Entry x:Name="Uni_Name" Placeholder="Name" WidthRequest="130" BackgroundColor="#FFFFFF" PlaceholderColor="#999999" Margin="0,0,10,0"/>
+            <Entry x:Name="Uni_Location" Placeholder="Location" WidthRequest="130" BackgroundColor="#FFFFFF" PlaceholderColor="#999999" Margin="0,0,10,0"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="10">
+            <Picker x:Name="MajorPicker" Title="Major" BackgroundColor="#FFFFFF" TextColor="#333333"  TitleColor="#999999" WidthRequest="170">
+                <Picker.Items>
+                    <x:String>Software Engineering</x:String>
+                    <x:String>Computer Engineering</x:String>
+                    <x:String>Biomedical Engineering</x:String>
+                    <x:String>Chemical Engineering</x:String>
+                    <x:String>Electrical engineering</x:String>
+                    <x:String>Mechanical Engineering</x:String>
+                    <x:String>Civil Engineering</x:String>
+                    <x:String>Software Engineering</x:String>
+                    <x:String>Computer Science</x:String>
+                    <x:String>Markiting</x:String>
+                    <x:String>Public Relations</x:String>
+                    <x:String>Economics</x:String>
+                    <x:String>Accounting</x:String>
+                </Picker.Items>
+            </Picker>
+        </StackLayout>
+
+        <Button x:Name="Button_AddUni" Text="Add University" Clicked="Button_AddUni_Clicked" WidthRequest="100" BackgroundColor="#007BFF" TextColor="#FFFFFF" CornerRadius="5" HorizontalOptions="Center" Margin="0,20,0,10"/>
+
+        <StackLayout>
+            <Frame CornerRadius="20" BackgroundColor="#CFD8DC" WidthRequest="400">
+                <Label Text="Universities Selected" FontAttributes="Bold" HorizontalOptions="Center" TextColor="Black"/>
+            </Frame>
+
+            <ScrollView>
+                <Frame CornerRadius="20" BackgroundColor="#CFD8DC" WidthRequest="400">
+                    <ListView x:Name="Uni_List_View" Background="#CFD8DC" WidthRequest="400">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding ID}" Margin="10,0,10,0" TextColor="#37474F"/>
+                                        <Label Text="{Binding Name}" Margin="5,0" TextColor="#37474F"/>
+                                        <Label Text="{Binding Location}" Margin="5,0" TextColor="#37474F"/>
+                                        <Label Text="{Binding Major}" Margin="5,0" TextColor="#37474F"/>
+                                        <Button Text="Delete" BindingContext="{Binding ID}" Clicked="Del_Button_Clicked" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Margin="10,0" BackgroundColor="#DC3545"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Frame>
+            </ScrollView>
+
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            
+        
+        <Button Text="Continue" Clicked="GoToUniversityPage_Clicked" WidthRequest="100" BackgroundColor="#007BFF" TextColor="#FFFFFF" CornerRadius="5" HorizontalOptions="Center" Margin="0,20,10,10"/>
+        <Button Text="Previous" Clicked="Previous_Clicked" WidthRequest="100" BackgroundColor="#007BFF" TextColor="#FFFFFF" CornerRadius="5" HorizontalOptions="Center" Margin="0,20,10,10"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

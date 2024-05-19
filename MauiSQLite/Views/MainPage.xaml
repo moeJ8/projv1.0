@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiSQLite.MainPage">
+    <StackLayout>
+
+        <Label Text="Student Informations" FontAttributes="Bold" TextColor="#333333" HorizontalOptions="Center" Margin="0,20,0,10"/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="10">
+            <Entry x:Name="Stu_Name" Placeholder="First Name" WidthRequest="130" BackgroundColor="#FFFFFF" PlaceholderColor="#999999" Margin="0,0,10,0" Keyboard="Text"/>
+            <Entry x:Name="Stu_LastName" Placeholder="Last Name" WidthRequest="130" BackgroundColor="#FFFFFF" PlaceholderColor="#999999"  Margin="0,0,10,0" Keyboard="Text"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="10">
+            <Picker x:Name="AgePicker" Title="Select Age" BackgroundColor="#FFFFFF" TextColor="#333333"  TitleColor="#999999">
+                <Picker.Items>
+                    <x:String>18</x:String>
+                    <x:String>19</x:String>
+                    <x:String>20</x:String>
+                    <x:String>21</x:String>
+                    <x:String>22</x:String>
+                    <x:String>23</x:String>
+                    <x:String>24</x:String>
+                    <x:String>25</x:String>
+                    <x:String>26</x:String>
+                    <x:String>27</x:String>
+                    <x:String>28</x:String>
+                    <x:String>29</x:String>
+                    <x:String>30</x:String>
+                    <x:String>31</x:String>
+                    <x:String>32</x:String>
+                    <x:String>33</x:String>
+                    <x:String>34</x:String>
+                    <x:String>35</x:String>
+                    <x:String>36</x:String>
+                    <x:String>37</x:String>
+                    <x:String>38</x:String>
+                    <x:String>39</x:String>
+                    <x:String>40</x:String>
+                </Picker.Items>
+            </Picker>
+            <Entry x:Name="Stu_Dept" Placeholder="interests" WidthRequest="130" BackgroundColor="#FFFFFF" PlaceholderColor="#999999" Margin="10,0" Keyboard="Text"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="10">
+            <Entry x:Name="Stu_Email" Placeholder="Email" WidthRequest="130" BackgroundColor="#FFFFFF" PlaceholderColor="#999999" Margin="0,0,10,0" Keyboard="Email"/>
+            <Entry x:Name="Stu_Phone" Placeholder="Phone Number" WidthRequest="130" BackgroundColor="#FFFFFF" PlaceholderColor="#999999"  Margin="0,0,10,0" Keyboard="Numeric"/>
+        </StackLayout>
+
+
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="10">
+            <Label Text="Select Your Gender" FontAttributes="Bold" TextColor="#333333"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <RadioButton x:Name="male" Content="male" TextColor="#333333"/>
+            <RadioButton x:Name="female" Content="female" TextColor="#333333"/>
+            <RadioButton x:Name="other" Content="other" TextColor="#333333"/>
+         </StackLayout>
+
+        <Button x:Name="Button_Add" Text="Add" Clicked="Button_Add_Clicked" WidthRequest="100" BackgroundColor="#007BFF" TextColor="#FFFFFF" CornerRadius="5" HorizontalOptions="Center" Margin="0,20,0,10"/>
+        <StackLayout>
+            <StackLayout>
+                
+            
+            <Frame CornerRadius="20" BackgroundColor="#CFD8DC" WidthRequest="400">
+                    <Label Text="Students who want to registar" FontAttributes="Bold" HorizontalOptions="Center" TextColor="Black"/>
+            </Frame>
+            </StackLayout>
+            <ScrollView>
+
+                <Frame CornerRadius="20" BackgroundColor="#CFD8DC" WidthRequest="400">
+
+                    <ListView x:Name="Stu_List_View" Background="#CFD8DC" WidthRequest="400" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding ID}"  Margin="10,0,10,0" TextColor="#37474F"/>
+                                        <Label Text="{Binding Name}" Margin="5,0" TextColor="#37474F"/>
+                                        <Label Text="{Binding LastName}" Margin="5,0" TextColor="#37474F"/>
+                                        <Label Text="{Binding Age} " Margin="5,0" TextColor="#37474F"/>
+                                        <Label Text="{Binding Gender}" Margin="5,0" TextColor="#37474F"/>
+                                        <Label Text="{Binding Department}" Margin="5,0" TextColor="#37474F"/>
+                                        <Button Text="Delete" BindingContext="{Binding ID}" Clicked="Del_Button_Clicked" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Margin="10,0" BackgroundColor="#DC3545"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Frame>
+            </ScrollView>
+        </StackLayout>
+
+        <Button Text="Continue" Clicked="GoToUniversityPage_Clicked" WidthRequest="100" BackgroundColor="#007BFF" TextColor="#FFFFFF" CornerRadius="5" HorizontalOptions="Center" Margin="0,20,0,10"/>
+
+
+    </StackLayout>
+
+</ContentPage>

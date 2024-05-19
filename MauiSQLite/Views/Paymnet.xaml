@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiSQLite.Payment"
+             Title="Payment">
+
+    <StackLayout>
+
+
+        
+        <Label Text="Total amount should be paid is 100$"  TextColor="#333333"  Margin="20,20,0,20"/>
+        <Label Text="Card Informations"  FontAttributes="Bold" TextColor="#333333" HorizontalOptions="Center" Margin="0,20,0,10"/>
+        <Entry x:Name="cardName" Placeholder="Card Holder Name" WidthRequest="200" BackgroundColor="#FFFFFF" PlaceholderColor="#999999" Margin="0,0,10,0" Keyboard="Text"/>
+        <StackLayout>
+            <Entry x:Name="cardNumber" Placeholder="Card Number" WidthRequest="180" BackgroundColor="#FFFFFF" PlaceholderColor="#999999" Margin="0,0,10,0" Keyboard="Numeric"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="10">
+            
+            <Entry x:Name="expMonth" Placeholder="Month" WidthRequest="50" BackgroundColor="#FFFFFF" PlaceholderColor="#999999" Margin="0,0,10,0" Keyboard="Numeric" />
+            <Entry x:Name="expYear" Placeholder="Year" WidthRequest="50" BackgroundColor="#FFFFFF" PlaceholderColor="#999999" Margin="0,0,10,0" Keyboard="Numeric"/>
+            <Entry x:Name="cvv" Placeholder="CVV" WidthRequest="50" BackgroundColor="#FFFFFF" PlaceholderColor="#999999" Margin="0,0,10,0" Keyboard="Numeric"/>
+
+        </StackLayout>
+
+        <Button x:Name="Button_AddPay" Text="Pay" Clicked="Button_AddPay_Clicked" WidthRequest="100" BackgroundColor="#007BFF" TextColor="#FFFFFF" CornerRadius="5" HorizontalOptions="Center" Margin="0,20,0,10"/>
+
+        <!-- <ScrollView>
+    <ListView x:Name="Pay_List_View">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding ID}"/>
+                        <Label Text="{Binding Name}"/>
+                        <Label Text="{Binding Description}"/>
+                        <Button Text="Delete" BindingContext="{Binding ID}" Clicked="Del_Button_Clicked"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ScrollView> -->
+        
+
+        <Button Text="Previous" Clicked="Previous_Clicked" WidthRequest="100" BackgroundColor="#007BFF" TextColor="#FFFFFF" CornerRadius="5" HorizontalOptions="Center" Margin="0,20,10,10"/>
+
+    </StackLayout>
+</ContentPage>
